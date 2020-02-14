@@ -7,6 +7,10 @@ A data structure that uses a single, fixed-size buffer connected end-to-end.
 
 class RingBuffer:
     def __init__(self, N=1000):
+        """A Ring Buffer object.
+        N = length of buffer object (list)
+        Default = 1000
+        """
         self.N = N
         self.buffer = [None] * self.N
         self.wIdx = 0
