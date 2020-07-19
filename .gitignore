@@ -126,3 +126,4 @@ dmypy.json
 
 # VS-Code
 .history/
+.vscode/
