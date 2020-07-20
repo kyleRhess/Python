@@ -26,8 +26,10 @@ class RingBuffer:
         # If the buff is full, increase read index with write.
         if self.is_full():
             self.rIdx = (self.rIdx + 1) % self.N
+
         # Always increment write index.
         self.wIdx = (self.wIdx + 1) % self.N
+
         # If caught up to read index, then it's full.
         if self.wIdx == self.rIdx:
             self.buffFull = True
@@ -37,6 +39,7 @@ class RingBuffer:
         Raises an IndexError if the buffer is empty.
         """
         element = None
+
         # Only modify pointers if buffer has elements to return.
         if not self.is_empty():
             element = self.buffer[self.rIdx]
